@@ -1,0 +1,178 @@
+<Home>
+    name: "home"    
+    MDFloatLayout:
+        # md_bg_color: 230/255, 244/255, 241/255, 1
+        MDBottomNavigation:
+            #Home--------------------------
+            MDBottomNavigationItem:
+                name: 'home'
+                icon: 'home'
+                MDScreen:
+                    md_bg_color: 1,1,1,1
+                    MDFloatLayout:
+                        Image:
+                            source: "images/Ellipse 83.png"
+                            size_hint: 1,1
+                            pos_hint:{'center_x': 0.5, "center_y": .85}
+                            allow_stretch: 0.9, 0.9
+                        Image:
+                            source: "images/Ellipse 117.png"
+                            size_hint: .50, .50
+                            pos_hint:{'center_x': 0.95, "center_y": .95}
+                            allow_stretch: 0.9, 0.9
+                        MDLabel:
+                            text:"Welcome"
+                            color: 1,1,1,1
+                            font_size: 16
+                            theme_text_color: "Primary"
+                            size_hint_x:None
+                            width: 300
+                            halign: "left"
+                            pos_hint: {"center_x": 0.5, "center_y": .90}
+                        MDLabel:
+                            id: username
+                            text:"CHARLIE D. LICAROS"
+                            color: 1,1,1,1
+                            font_size: 20
+                            size_hint_x:None
+                            width: 300
+                            halign: "left"
+                            pos_hint: {"center_x": 0.5, "center_y": .85}
+
+                        MDCard:
+                            id: card
+                            md_bg_color: 1, 1, 1, 1
+                            pos_hint: {"center_x": 0.5, "center_y": .39}
+                            size_hint: None, None
+                            height: 261
+                            width: 300
+                            radius:[25,25,25,25]
+                            MDFloatLayout:
+                                MDLabel:
+                                    id: value
+                                    text:"--"
+                                    color: 88/255, 87/255, 87/255, 1
+                                    font_size: 100
+                                    font_name: 'Fonts/Poppins-Medium.ttf'
+                                    theme_text_color: "Primary"
+                                    size_hint_x:1
+                                    height: 100
+                                    halign: "center"
+                                    pos_hint: {"center_x": 0.5, "center_y": 0.65}
+                                MDLabel:
+                                    id: desc
+                                    text:"Loading..."
+                                    color: 88/255, 87/255, 87/255, 1
+                                    font_size: 30
+                                    font_name: 'Fonts/Poppins-Medium.ttf'
+                                    theme_text_color: "Primary"
+                                    size_hint_x:0.5
+                                    size_hint_y:0.5
+                                    halign: "center"
+                                    pos_hint: {"center_x": 0.5, "center_y": 0.45}
+
+                                MDLabel:
+                                    id: time
+                                    text:"----"
+                                    color: 88/255, 87/255, 87/255, 1
+                                    font_size: 27
+                                    font_name: 'Fonts/Poppins-Thin.ttf'
+                                    theme_text_color: "Primary"
+                                    size_hint_x:0.5
+                                    size_hint_y:0.5
+                                    halign: "center"
+                                    pos_hint: {"center_x": 0.5, "center_y": 0.25}
+                                    
+            #Data--------------------------
+            MDBottomNavigationItem:
+                name: 'data'
+                icon: 'chart-line-variant'
+                MDScreen:
+                    MDLabel:
+                        text:"Data"
+                        theme_text_color: "Primary"
+                        font_name: 'Fonts/Poppins-Regular.ttf'
+                        text_color: 1,1,1,1
+                        halign: "center"
+                        font_size: 40
+                        pos_hint:{"center_x": .5, "center_y": .94}
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        padding: 10
+                        spacing: 15
+                        MDCard:
+                            id: image
+                            md_bg_color: 0,0,0,.5
+                            pos_hint: {"center_x":.5, "center_y":.9}
+                            size_hint_x: 1
+                            size_hint_y: None
+                            height: 200
+                            width: 330
+                            border_radius: [20, 20, 0, 0]
+                            AsyncImage:
+                                id: my_image
+                                source: "https://firebasestorage.googleapis.com/v0/b/floodtify.appspot.com/o/data%2Fimages%2Fpreview.jpg?alt=media"  # URL of the preview image
+                                source: "images/XOsX.gif"
+                                size_hint: None,None
+                                pos_hint: {"center_x":1, "center_y":.5}
+                                height: 191
+                                # width: 335
+                                width: self.parent.width
+                                allow_stretch: True
+                                keep_ratio: False
+                                reload_on_error: False
+                                border_radius: self.parent.border_radius
+
+                        MDCard:
+                            md_bg_color: 37/255, 44/255, 64/255,1
+                            pos_hint: {"center_x":.5, "center_y":.6}
+                            size_hint_x: 1
+                            size_hint_y: None
+                            height: 250
+                            width: 330
+                            
+                            Graph:
+                                id: graph
+                                ylabel: 'Value'
+                                border_color: 0,0,0,1
+                                y_ticks_major: 10
+                                y_grid_label: True
+                                x_grid_label: True
+                                ymin: 0
+                                ymax: 100
+
+            #History--------------------------
+            MDBottomNavigationItem:
+                name: 'history'
+                icon: 'history'
+                MDScreen:
+                    MDFloatLayout:
+                        MDLabel:
+                            text:"Data History"                           
+                            theme_text_color:"Primary"
+                            font_name: 'Fonts/Poppins-Medium.ttf'
+                            text_color: 1,1,1,1
+                            halign: "center"            
+                            font_size: 17 
+                            pos_hint:{"center_x": .5, "center_y": .92}
+                        ScrollView:
+                            md_bg_color:0, 1, 1, .5
+                            pos_hint: {"center_x": .50, "center_y": .39}
+                            do_scroll_x: True
+                            do_scroll_y: True
+                            MDList:
+                                id: history_list
+                                OneLineListItem:
+                                    MDLabel:
+                                        id: history_val
+                                        text: "Value"
+                                        font_name: 'Fonts/Poppins-SemiBold.ttf'
+                                        font_size: 16
+                                        pos_hint: {"center_x": 0.55, "center_y": .55}
+                                    MDLabel:
+                                        id: history_date
+                                        text: "Date"
+                                        font_name: 'Fonts/Poppins-Regular.ttf'
+                                        theme_text_color: "Secondary"
+                                        font_size: 15
+                                        pos_hint: {"center_x": 1.15, "center_y": .55}
