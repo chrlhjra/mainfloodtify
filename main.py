@@ -136,6 +136,13 @@ class ChuchuApp(MDApp):
 	def change_screen(self, dt):
 		self.sm.current = 'home'
 	def build(self):
+		screen_width = Window.size[0]
+		screen_height = Window.size[1]
+		
+		Window.size = (screen_width, screen_height)
+
+
+
 		Builder.load_file('kivy_files/splashscreen.kv')
 		Builder.load_file('kivy_files/onboarding.kv')
 		Builder.load_file('kivy_files/home.kv')
@@ -155,17 +162,7 @@ class ChuchuApp(MDApp):
 		self.graph.x_grid_label = True
 		self.graph.xmin = 0
 		self.graph.xmax = self.xmax
-        # set the app window size to 360x600
-		Config.set('graphics', 'width', '360')
-		Config.set('graphics', 'height', '600')
-		
-		# get the size of the mobile device screen
-		self.screen_width = Config.getint('graphics', 'width')
-		self.screen_height = Config.getint('graphics', 'height')
-		
-		# scale the app to fit the mobile device screen
-		self.scale_x = self.screen_width / 360
-		self.scale_y = self.screen_height / 600
+
 		Clock.schedule_interval(self.update_image_source, 10.0)
 		return self.sm
 	
