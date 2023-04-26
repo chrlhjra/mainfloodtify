@@ -136,10 +136,10 @@ class ChuchuApp(MDApp):
 	def change_screen(self, dt):
 		self.sm.current = 'home'
 	def build(self):
-		screen_width = Window.size[0]
-		screen_height = Window.size[1]
+		# screen_width = Window.size[0]
+		# screen_height = Window.size[1]
 		
-		Window.size = (screen_width, screen_height)
+		Window.size = (421, 939)
 
 
 
