@@ -10,6 +10,8 @@
                 MDScreen:
                     md_bg_color: 1,1,1,1
                     MDFloatLayout:
+                        pos_hint:{'center_x': 0.5, "center_y": .53}
+                        size_hint_y: 1
                         Image:
                             source: "images/Ellipse 83.png"
                             size_hint: 1,1
@@ -101,14 +103,14 @@
                         orientation: 'vertical'
                         padding: 10
                         spacing: 15
-                        pos_hint: {"center_x":.5, "center_y":.5}
+                        pos_hint: {"center_x":.5, "center_y":.75}
 
                         MDCard:
                             id: image
                             md_bg_color: 0,0,0,.5
                             size_hint_x: 1
                             size_hint_y: None
-                            height: 200
+                            height: 250
                             width: 330
                             border_radius: [20, 20, 0, 0]
                             AsyncImage:
