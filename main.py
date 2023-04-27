@@ -142,7 +142,6 @@ class ChuchuApp(MDApp):
 		Window.size = (421, 939)
 
 
-
 		Builder.load_file('kivy_files/splashscreen.kv')
 		Builder.load_file('kivy_files/onboarding.kv')
 		Builder.load_file('kivy_files/home.kv')
