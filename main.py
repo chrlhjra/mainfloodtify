@@ -139,7 +139,7 @@ class ChuchuApp(MDApp):
 		# screen_width = Window.size[0]
 		# screen_height = Window.size[1]
 		
-		Window.size = (421, 939)
+		Window.size = (431, 939)
 
 
 		Builder.load_file('kivy_files/splashscreen.kv')

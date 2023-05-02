@@ -21,10 +21,17 @@
                         pos_hint:{'center_x': 0.5, "center_y": .53}
                         size_hint_y: 1
                         Image:
-                            source: "images/Ellipse 83.png"
-                            size_hint: 1,1
-                            pos_hint:{'center_x': 0.5, "center_y": .85}
-                            allow_stretch: 0.9, 0.9
+                            source: "images/elel.png"
+                            size_hint_x: None
+                            size_hint_y: 1
+                            width: 500
+                            pos_hint:{'center_x': 0.5, "center_y": .88}
+                            allow_stretch: 0.9, 1
+                        Image:
+                            source: "images/new.png"
+                            size_hint: None,None
+                            size: 320,320
+                            pos_hint:{'center_x': 0.39, "center_y": .87}
                         Image:
                             source: "images/Ellipse 117.png"
                             size_hint: .50, .50
@@ -74,12 +81,22 @@
                                     size_hint_y:0.5
                                     halign: "center"
                                     pos_hint: {"center_x": 0.5, "center_y": 0.25}
+    
                                     
             #Data--------------------------
             MDBottomNavigationItem:
                 name: 'data'
                 icon: 'chart-line-variant'
                 MDScreen:
+                    md_bg_color:[0/255, 108/255, 133/255,1]
+                    AsyncImage:
+                        source: 'images/neww.png'
+                        allow_stretch: False
+                        keep_ratio: False
+                        pos_hint: {"center_x":.5, "center_y":.36}
+                        size_hint: (None, None)
+                        width: 550
+                        height: 900
                     MDLabel:
                         text:"Data"
                         theme_text_color: "Primary"
@@ -92,8 +109,8 @@
                     MDBoxLayout:
                         orientation: 'vertical'
                         padding: 10
-                        spacing: 15
-                        pos_hint: {"center_x":.5, "center_y":.75}
+                        spacing: 130
+                        pos_hint: {"center_x":.5, "center_y":.55}
 
                         MDCard:
                             id: image
@@ -134,6 +151,7 @@
                                 x_grid_label: True
                                 ymin: 0
                                 ymax: 100
+
 
             #History--------------------------
             MDBottomNavigationItem:
