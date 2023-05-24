@@ -15,23 +15,22 @@
                         size_hint_x: 1
                         color: [1,1,1,0.4]
                         text:""
-
                     # md_bg_color: 1,1,1,1
                     MDFloatLayout:
                         pos_hint:{'center_x': 0.5, "center_y": .53}
                         size_hint_y: 1
-                        # Image:
-                        #     source: "images/elel.png"
-                        #     size_hint_x: None
-                        #     size_hint_y: 1
-                        #     width: 500
-                        #     pos_hint:{'center_x': 0.5, "center_y": .88}
-                        #     allow_stretch: 0.9, 1
                         Image:
-                            source: "images/almost.png"
+                            source: "images/new7.png"
+                            size_hint_x: None
+                            size_hint_y: 1
+                            width: 500
+                            pos_hint:{'center_x': 0.5, "center_y": .63}
+                            allow_stretch: 0.9, 1
+                        Image:
+                            source: "images/almost5.png"
                             size_hint: None,None
-                            size: 320,320
-                            pos_hint:{'center_x': 0.39, "center_y": .87}
+                            size: 250,250
+                            pos_hint:{'center_x': 0.5, "center_y": .8}
                         Image:
                             source: "images/Ellipse 117.png"
                             size_hint: .50, .50
@@ -81,8 +80,7 @@
                                     size_hint_y:0.5
                                     halign: "center"
                                     pos_hint: {"center_x": 0.5, "center_y": 0.25}
-    
-                                    
+
             #Data--------------------------
             MDBottomNavigationItem:
                 name: 'data'
