@@ -1,6 +1,7 @@
 <Home>
     name: "home"    
     MDFloatLayout:
+        size_hint: 1,1
         # md_bg_color: 230/255, 244/255, 241/255, 1
         MDBottomNavigation:
             #Home--------------------------
@@ -12,8 +13,7 @@
                         source: 'images/fal2.png'
                         allow_stretch: True
                         keep_ratio: False
-                        size_hint_x: 1
-                        size_hint_y:1
+                        size_hint: 1, 1
                         color: [1,1,1,0.5]
                     # md_bg_color: 1,1,1,1
                     MDFloatLayout:
@@ -30,7 +30,7 @@
                         Image:
                             source: "images/almost5.png"
                             size_hint: None,None
-                            size: 220,220
+                            size: dp(220),dp(220)
                             pos_hint:{'center_x': 0.5, "center_y": .8}
                         Image:
                             source: "images/Ellipse 117.png"
@@ -43,8 +43,8 @@
                             md_bg_color: 1, 1, 1, 1
                             pos_hint: {"center_x": 0.5, "center_y": .3}
                             size_hint: None, None
-                            height: 290
-                            width: 360
+                            height: 380
+                            width: 450
                             radius:[25,25,25,25]
                             MDFloatLayout:
                                 MDLabel:
@@ -91,11 +91,9 @@
                         source: "images/new7.1.png"
                         size_hint_x: 1
                         size_hint_y: 1
-                        # size: 1000, 870
                         pos_hint: {'center_x': 0.5, 'center_y': 0.63}
                         allow_stretch: True
                         keep_ratio:False
-                    # md_bg_color: 1,1,1,1
                     AsyncImage:
                         source: 'images/background.png'
                         allow_stretch: True
@@ -125,7 +123,7 @@
                             md_bg_color: 0, 0, 0, .5
                             size_hint: 1, None
                             height: 200
-                            width: self.parent.width - 40  # Adjusted width to leave a 20px margin on each side
+                            width: self.parent.width  # Adjusted width to leave a 20px margin on each side
                             pos_hint: {"center_x": .5, "top": 1}  # Positioned the card at the top of the box layout
                             border_radius: [20, 20, 0, 0]
                             AsyncImage:
@@ -151,7 +149,7 @@
                             size_hint_x: 1
                             size_hint_y: None
                             height: 250
-                            width: self.parent.width - 40  # Adjusted width to leave a 20px margin on each side
+                            width: self.parent.width  # Adjusted width to leave a 20px margin on each side
 
                             Graph:
                                 id: graph
@@ -178,6 +176,7 @@
                             text_color: 1,1,1,1
                             halign: "center"            
                             font_size: 17 
+                            size_hint:1,1
                             pos_hint:{"center_x": .5, "center_y": .92}
                         ScrollView:
                             md_bg_color:0, 1, 1, .5
