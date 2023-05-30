@@ -13,18 +13,20 @@
                         allow_stretch: True
                         keep_ratio: False
                         size_hint_x: 1
+                        size_hint_y:1
                         color: [1,1,1,0.5]
                     # md_bg_color: 1,1,1,1
                     MDFloatLayout:
                         pos_hint:{'center_x': 0.5, "center_y": .53}
                         size_hint_y: 1
                         Image:
-                            source: "images/new7.png"
-                            size_hint_x: None
-                            size_hint: None, None
-                            size: 1000, 870
-                            pos_hint: {'center_x': 0.5, 'center_y': 0.63}
+                            source: "images/new7.1.png"
+                            size_hint_x: 1
+                            size_hint_y: 1
+                            # size: 1000, 870
+                            pos_hint: {'center_x': 0.5, 'center_y': 1.12}
                             allow_stretch: True
+                            keep_ratio:False
                         Image:
                             source: "images/almost5.png"
                             size_hint: None,None
@@ -86,21 +88,21 @@
                 icon: 'chart-line-variant'
                 MDScreen: 
                     AsyncImage:
-                        source: "images/new7.png"
-                        size_hint_x: None
-                        size_hint: None, None
-                        size: 1000, 870
+                        source: "images/new7.1.png"
+                        size_hint_x: 1
+                        size_hint_y: 1
+                        # size: 1000, 870
                         pos_hint: {'center_x': 0.5, 'center_y': 0.63}
                         allow_stretch: True
+                        keep_ratio:False
                     # md_bg_color: 1,1,1,1
                     AsyncImage:
-                        source: 'images/untitled32.png'
-                        allow_stretch: False
+                        source: 'images/background.png'
+                        allow_stretch: True
                         keep_ratio: False
-                        pos_hint: {"center_x":.5, "center_y":.36}
-                        size_hint: (None, None)
-                        size: 1000, 825
-
+                        pos_hint: {"center_x":0.5, "center_y":.32}
+                        size_hint_x:1
+                        size_hint_y:1
                     MDLabel:
                         text:"Data"
                         theme_text_color: "Primary"
@@ -110,51 +112,57 @@
                         halign: "center"
                         font_size: 40
                         pos_hint:{"center_x": .5, "center_y": .94}
+
                     MDBoxLayout:
                         orientation: 'vertical'
                         padding: 10
-                        spacing: 130
-                        pos_hint: {"center_x":.5, "center_y":.55}
+                        spacing: 20  # Adjusted spacing between cards to 20px
+                        pos_hint: {"center_x": .5, "center_y": .65}
+                        # md_bg_color: 30/255, 30/255, 30/255, 1
 
                         MDCard:
                             id: image
-                            md_bg_color: 0,0,0,.5
-                            size_hint_x: 1
-                            size_hint_y: None
-                            height: 250
-                            width: 330
+                            md_bg_color: 0, 0, 0, .5
+                            size_hint: 1, None
+                            height: 200
+                            width: self.parent.width - 40  # Adjusted width to leave a 20px margin on each side
+                            pos_hint: {"center_x": .5, "top": 1}  # Positioned the card at the top of the box layout
                             border_radius: [20, 20, 0, 0]
                             AsyncImage:
                                 id: my_image
                                 source: "https://firebasestorage.googleapis.com/v0/b/floodtify.appspot.com/o/data%2Fimages%2Fpreview.jpg?alt=media"  # URL of the preview image
                                 source: "images/XOsX.gif"
-                                size_hint: None,None
-                                pos_hint: {"center_x":1, "center_y":.5}
-                                height: 191
-                                # width: 335
-                                width: self.parent.width
+                                size_hint: None, None
+                                pos_hint: {"center_x": .5, "center_y": .5}
+                                height: 195
+                                width: self.parent.width - 40  # Adjusted width to leave a 20px margin on each side
                                 allow_stretch: True
                                 keep_ratio: False
                                 reload_on_error: False
                                 border_radius: self.parent.border_radius
 
+                        Widget:  # Added an empty Widget to create a space between the two cards
+                            size_hint_y: None
+                            height: 30
+
                         MDCard:
-                            md_bg_color: 37/255, 44/255, 64/255,1
-                            pos_hint: {"center_x":.5, "center_y":.6}
+                            md_bg_color: 37/255, 44/255, 64/255, 1
+                            pos_hint: {"center_x": .5, "top": 1}  # Positioned the card at the top of the box layout
                             size_hint_x: 1
                             size_hint_y: None
                             height: 250
-                            width: 330
-                            
+                            width: self.parent.width - 40  # Adjusted width to leave a 20px margin on each side
+
                             Graph:
                                 id: graph
                                 ylabel: 'Value'
-                                border_color: 0,0,0,1
+                                border_color: 0, 0, 0, 1
                                 y_ticks_major: 10
                                 y_grid_label: True
                                 x_grid_label: True
                                 ymin: 0
                                 ymax: 100
+
 
 
             #History--------------------------
