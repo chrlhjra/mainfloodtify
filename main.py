@@ -22,7 +22,7 @@ class Onboarding(Screen):
 	pass
 
 class Home(Screen):
-    pass
+	pass
 
 class ChuchuApp(MDApp):
 	def __init__(self, **kwargs):
@@ -138,8 +138,14 @@ class ChuchuApp(MDApp):
 	def build(self):
 		# screen_width = Window.size[0]
 		# screen_height = Window.size[1]
+		screen_width, screen_height = Window.size[0], Window.size[1]
 		
-
+		# Calculate the desired window size based on the screen size
+		desired_width = int(screen_width * 0.8)  # Adjust the multiplier as needed
+		desired_height = int(screen_height * 0.8)  # Adjust the multiplier as needed
+		
+		# Set the size of the app window
+		Window.size = (desired_width, desired_height)
 
 		Builder.load_file('kivy_files/splashscreen.kv')
 		Builder.load_file('kivy_files/onboarding.kv')
